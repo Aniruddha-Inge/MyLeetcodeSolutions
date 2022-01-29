@@ -37,7 +37,7 @@ class Solution {
             int width = rb[i] - lb[i] - 1;
             int area = heights[i]*width;
             
-            if(area > maxArea){
+            if(area >= maxArea){
                 maxArea = area;
             }
         }
