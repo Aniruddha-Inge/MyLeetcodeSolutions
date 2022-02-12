@@ -1,0 +1,1 @@
+divide the list into two halves, reverse the later one, then compare the first and the second part
