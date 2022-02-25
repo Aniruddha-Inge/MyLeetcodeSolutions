@@ -1,6 +1,8 @@
 class Solution {
     public List<String> letterCasePermutation(String S) {
-        
+        if (S == null) {
+            return new LinkedList<>();
+        }
         Queue<String> queue = new LinkedList<>();
         queue.offer(S);
         
