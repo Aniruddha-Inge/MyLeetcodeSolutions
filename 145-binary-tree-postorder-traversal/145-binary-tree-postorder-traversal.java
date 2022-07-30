@@ -21,8 +21,6 @@ class Solution {
     }
     void dfs(TreeNode node, List<Integer> postorder){
         if(node == null) return;
-        
-        
         dfs(node.left, postorder);
         dfs(node.right, postorder);
         postorder.add(node.val);
