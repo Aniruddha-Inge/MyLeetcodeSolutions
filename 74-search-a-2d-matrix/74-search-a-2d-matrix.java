@@ -11,7 +11,6 @@ class Solution {
                 row++;
             else
                 col--;
-        
         }
     return false;
     }
