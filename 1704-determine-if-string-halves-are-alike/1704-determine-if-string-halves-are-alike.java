@@ -1,18 +1,26 @@
 class Solution {
     public boolean halvesAreAlike(String s) {
-        int count1 = 0;
-        int count2 = 0;
-        
-        for(int i=0; i<s.length()/2; i++){
-            if(s.charAt(i) == 'a' || s.charAt(i) ==  'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o' || s.charAt(i) == 'u' || s.charAt(i) == 'A' || s.charAt(i) == 'E' || s.charAt(i) == 'I' || s.charAt(i) == 'O' || s.charAt(i) == 'U'){
-                count1++;
-            }
+    HashSet<Character> set = new HashSet<>();
+    set.add('a');
+    set.add('e');
+    set.add('i');
+    set.add('o');
+    set.add('u');
+    set.add('A');
+    set.add('E');
+    set.add('O');
+    set.add('I');
+    set.add('U');
+    int left =0;
+    int right = 0;
+    for(int i=0;i<s.length()/2;i++){
+        if(set.contains(s.charAt(i))){
+            left++;
         }
-        for(int i=s.length()/2; i<s.length(); i++){
-            if(s.charAt(i) == 'a' || s.charAt(i) ==  'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o' || s.charAt(i) == 'u' || s.charAt(i) == 'A' || s.charAt(i) == 'E' || s.charAt(i) == 'I' || s.charAt(i) == 'O' || s.charAt(i) == 'U'){
-                count2++;
-            }
+        if(set.contains(s.charAt(s.length()-1-i))){
+            right++;
         }
-        return (count1 == count2);
     }
+    return left == right;
+}
 }
